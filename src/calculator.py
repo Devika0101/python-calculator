@@ -1,5 +1,8 @@
 def calculator(num1, num2, operation):
-    """Perform a basic arithmetic operation on two numbers."""
+    """Perform arithmetic, raising ValueError for unsupported operations.
+
+    Raise ZeroDivisionError when dividing by zero.
+    """
     if operation == "add":
         return num1 + num2
     if operation == "subtract":
@@ -8,6 +11,6 @@ def calculator(num1, num2, operation):
         return num1 * num2
     if operation == "divide":
         if num2 == 0:
-            raise ValueError("Cannot divide by zero")
+            raise ZeroDivisionError("Cannot divide by zero")
         return num1 / num2
     raise ValueError(f"Unsupported operation: {operation}")
